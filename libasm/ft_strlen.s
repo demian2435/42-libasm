@@ -15,3 +15,4 @@ while:
 return:
 	sub		rax, rdi
 	ret
+

@@ -20,3 +20,4 @@ error:
 	mov		qword[rax], rdx
 	mov		rax, -1
 	ret
+

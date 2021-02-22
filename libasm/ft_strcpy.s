@@ -18,3 +18,4 @@ return:
 	mov		byte[rdi + rcx], 0
 	mov		rax, rdi	
 	ret
+
