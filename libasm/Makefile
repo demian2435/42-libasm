@@ -6,7 +6,7 @@
 #    By: d2435 <d2435@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/20 13:07:25 by dmalori           #+#    #+#              #
-#    Updated: 2021/02/22 13:59:56 by d2435            ###   ########.fr        #
+#    Updated: 2021/02/22 18:42:07 by d2435            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ $(NAME):	${OBJS}
 			ar rcs $(NAME) $(OBJS)
 
 run:		$(NAME)
-			$(CC) $(CFLAGS) -no-pie libasm.c libasm_bis.c -L. -lasm -o test && clear && ./test && rm test
+			$(CC) $(CFLAGS) -no-pie libasm.c libasm_bis.c -L. -lasm -o test && ./d2435 && ./banner && ./test && rm test
 
 v:			$(NAME)
-			$(CC) $(CFLAGS) -no-pie libasm.c libasm_bis.c -L. -lasm -o test && clear && valgrind ./test && rm test
+			$(CC) $(CFLAGS) -no-pie libasm.c libasm_bis.c -L. -lasm -o test && ./d2435 && ./banner && valgrind ./test && rm test
 
 clean:
 			rm -rf $(OBJS)
