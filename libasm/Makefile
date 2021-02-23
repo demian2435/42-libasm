@@ -31,7 +31,7 @@ $(NAME):	${OBJS}
 			ar rcs $(NAME) $(OBJS)
 
 run:		$(NAME)
-			$(CC) $(CFLAGS) -no-pie libasm.c libasm_bis.c -L. -lasm -o test && ./d2435 && ./banner && ./test && rm test
+			$(CC) $(CFLAGS) libasm.c libasm_bis.c -L. -lasm -o test && ./d2435 && ./banner && ./test && rm test
 
 v:			$(NAME)
 			$(CC) $(CFLAGS) -no-pie libasm.c libasm_bis.c -L. -lasm -o test && ./d2435 && ./banner && valgrind ./test && rm test

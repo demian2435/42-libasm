@@ -1,20 +1,20 @@
 ;dest = rdi, src = rsi
 
 section		.text
-global		ft_strcpy
+global		_ft_strcpy
 
-ft_strcpy:
+_ft_strcpy:
 	mov		rcx, 0
 
-while:
+_while:
 	cmp		byte[rsi+rcx], 0
-	je		return
+	je		_return
 	mov		al, byte[rsi + rcx]
 	mov		byte[rdi + rcx], al
 	inc		rcx
-	jmp		while
+	jmp		_while
 
-return:
+_return:
 	mov		byte[rdi + rcx], 0
 	mov		rax, rdi	
 	ret

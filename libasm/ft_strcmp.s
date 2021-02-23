@@ -1,24 +1,24 @@
 ;str1 = rdi, str2 = rsi
 
 section		.text
-global		ft_strcmp
+global		_ft_strcmp
 
-ft_strcmp:
+_ft_strcmp:
 	mov		rcx, 0
 
-while:
+_while:
 	movzx	rax, byte[rdi + rcx]
 	movzx	rdx, byte[rsi + rcx]
 	cmp 	rax, rdx
-	jne		return
+	jne		_return
 	cmp		rax, 0
-	je		return
+	je		_return
 	cmp		rdx, 0
-	je		return
+	je		_return
 	inc		rcx	
-	jmp		while
+	jmp		_while
 
-return:
+_return:
 	sub 	rax, rdx
 	ret
 

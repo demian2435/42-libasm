@@ -1,42 +1,42 @@
 ;src = rdi
 
 section		.text
-global		ft_strdup
-extern		malloc
+global		_ft_strdup
+extern		_malloc
 
-ft_strdup:
+_ft_strdup:
 	cmp		rdi, 0
-	je		error
+	je		_error
 	mov		rcx, 0
 	mov		rdx, 0
 
-static_strlen:
+_static_strlen:
 	cmp		byte[rdi + rcx], 0
-	je		static_malloc
+	je		_static_malloc
 	inc		rcx
-	jmp		static_strlen
+	jmp		_static_strlen
 
-static_malloc:
+_static_malloc:
 	inc		rcx
 	push	rdi
 	mov		rdi, rcx
-	call	malloc
+	call	_malloc
 	pop		rdi
 	cmp		rax, 0
-	je		error
+	je		_error
 	mov		rcx, 0
 
-static_copy:
+_static_copy:
 	mov		dl, byte[rdi + rcx]
 	mov		byte[rax + rcx], dl
 	cmp		dl, 0
-	je		return
+	je		_return
 	inc		rcx
-	jmp		static_copy
+	jmp		_static_copy
 
-error:
+_error:
 	mov		rax, 0
 
-return:
+_return:
 	ret
 

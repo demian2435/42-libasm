@@ -1,18 +1,18 @@
 ;str = rdi
 
 section		.text
-global		ft_strlen
+global		_ft_strlen
 
-ft_strlen:
+_ft_strlen:
 	mov		rax, rdi
 
-while:
+_while:
 	cmp		byte[rax], 0
-	je		return
+	je		_return
 	inc		rax
-	jmp		while
+	jmp		_while
 
-return:
+_return:
 	sub		rax, rdi
 	ret
 

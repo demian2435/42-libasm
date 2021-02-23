@@ -6,7 +6,7 @@
 /*   By: d2435 <d2435@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 15:19:07 by dmalori           #+#    #+#             */
-/*   Updated: 2021/02/22 19:09:04 by d2435            ###   ########.fr       */
+/*   Updated: 2021/02/23 10:52:02 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			ft_test_strlen(void)
 	printf("\e[0m               **TEST STRLEN: ");
 	str = "Ciao";
 	printf("\e[0m01 %s ", strlen(str) != ft_strlen(str)
-		? "\e[1;31mKO" : "\e[1;32mOK");
+		? "\e[1;31;6§mKO" : "\e[1;32mOK");
 	str = "...";
 	printf("\e[0m02 %s ", strlen(str) != ft_strlen(str)
 		? "\e[1;31mKO" : "\e[1;32mOK");
